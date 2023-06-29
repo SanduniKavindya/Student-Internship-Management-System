@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+<title>Student Registration Form Using Table in HTML</title>
+<style>
+   
+h2{
+ font-family: Sans-serif; 
+ font-size: 24px;     
+ font-style: normal; 
+ font-weight: bold; 
+ color: blue;
+ text-align: center; 
+ text-decoration: underline;
+ margin-top:50px;
+}
+table{
+ font-family: verdana; 
+ color:black; 
+ font-size: 16px; 
+ font-style: normal;
+ font-weight: bold;
+ ackground: rgb(225,224,235);
+background: linear-gradient(90deg, rgba(225,224,235,1) 0%, rgba(233,240,241,0.9248949579831933) 35%, rgba(211,231,230,1) 62%);
+ border-collapse: collapse; 
+ border: 4px solid #000000;
+ border-style: box;
+  
+}
+table.inner{
+ border: 10px
+}
+img{
+width:100px;
+height:150px;
+align:center;
+}
+
+hr{
+width:100px;
+weight5px;
+}
+
+input[type=text], input[type=email], input[type=number]{
+ width: 70%;
+ padding: 6px 12px;
+ margin: 5px 0;
+ box-sizing: border-box;
+}
+input[type=submit] {
+ padding: 5px 15px;
+        background: #05F62A;
+        border: 0 none;
+        cursor: pointer;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+		font-weight: bold;
+}
+input[type=reset]{
+padding: 5px 15px;
+        background: #08F8F4;
+        border: 0 none;
+        cursor: pointer;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+		font-weight: bold;
+		}
+		body {
+  background-image: url('img/intern2.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+}	
+
+
+</style>
+</head>
+<body>
+
+<br>
+ <a href="index.html"> Back </a>
+<form action="StudentReg" method="post">
+<table align="center" cellpadding = "10">
+<caption><h3>Student Internship Registration</h3> </caption>
+
+
+<!--------------------- First Name ------------------------------------------>
+<tr>
+<td>ID</td>
+<td><input type="text" name="FirstName" maxlength="50" placeholder="GAM/IT/2020/F/0001" />
+
+</td>
+</tr>
+<!------------------------ Last Name --------------------------------------->
+<tr>
+<td>Name</td>
+<td><input type="text" name="LastName" maxlength="50" placeholder="Isuru"/>
+
+</td>
+</tr>
+<!-------------------------- Email ID ------------------------------------->
+<tr>
+<td>Email</td>
+<td><input type="email" name="EmailID" maxlength="100" placeholder="isuru@gmail.com"/></td>
+</tr>
+<!-------------------------- Mobile Number ------------------------------------->
+<tr>
+<td>Mobile Number</td>
+<td>
+<input type="text" name="Mobile" maxlength="10" placeholder="7842xxxxxx"/>
+
+</td>
+</tr>
+<!---------------------- Gender ------------------------------------->
+<tr>
+<td>Gender</td>
+<td>
+<input type="radio" name="Gender" value="Male" />
+Male
+<input type="radio" name="Gender" value="Female" />
+Female
+</td>
+</tr>
+<!--------------------------Date Of Birth----------------------------------->
+<tr>
+<td>Date of Birth</td>
+<td><input type="date" name="dob" id="dob"  placeholder="Date of Birth"/>
+</td>
+</tr>
+<!------------------------- Position---------------------------------->
+<tr>
+<td>Position</td>
+<td><select name="position" id="position">
+<option value="-1">Job Position:</option>
+<option value="QA">Quality Assurance</option>
+<option value="BA">Business Analyst</option>
+<option value="PM">Project Management</option>
+<option value="SD">Software Developer</option>
+<option value="WD">Web Developer</option>
+<option value="SA">Software Architect</option>
+<option value="DA">Database Administer</option>
+<option value="FD">Front-end Developer</option>
+</select></td>
+</tr>
+<!-------------------------- Company------------------------------------->
+<tr>
+<td>Company</td>
+<td><select name="company" id="Company">
+<option value="-1">Company:</option>
+<option value="OpenArc">Open Arc</option>
+<option value="EpicLanka">Epic Lanka</option>
+<option value="Millenium">Millenium IT software (Private) Limited</option>
+<option value="Allion">Allion Technologies</option>
+<option value="Asoft">Asoft(Pvt)Limited</option>
+<option value="Virtusa">Virtusa Pvt Ltd</option>
+<option value="IFS">IFS R & D International PVT LTD</option>
+</select></td>
+</tr>
+
+<!-----------------------Qualification---------------------------------------->
+
+
+<!----------------------- Submit and Reset ------------------------------->
+<tr>
+<td colspan="2" align="center">
+<input type="submit" value="Register">
+<input type="reset" value="Cancel">
+</td>
+</tr>
+</table>
+</form>
+</body>
+</html>
