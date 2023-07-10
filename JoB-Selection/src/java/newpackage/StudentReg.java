@@ -79,9 +79,9 @@ public class StudentReg extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-       String FirstName=request.getParameter("FirstName");
-       String LastName=request.getParameter("LastName");
-       String EmailID=request.getParameter("EmailID");
+       String stuID=request.getParameter("stuID");
+       String Name=request.getParameter("Name");
+       String Email=request.getParameter("Email");
        String Mobile =request.getParameter("Mobile");
        String Gender=request.getParameter("Gender");
        String dob=request.getParameter("dob");
@@ -100,10 +100,10 @@ public class StudentReg extends HttpServlet {
 
             Class.forName("com.mysql.jdbc.Driver");
             Connection con=(Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/data?useSSL=false","root","");
-            PreparedStatement pst=con.prepareStatement("insert into Student(FirstName,LastName,EmailID,Mobile,Gender,dob,position,Company) values (?,?,?,?,?,?,?,?)");
-            pst.setString(1, FirstName);
-                        pst.setString(2, LastName);
-                        pst.setString(3, EmailID);
+            PreparedStatement pst=con.prepareStatement("insert into Student(stuID,Name,Email,Mobile,Gender,dob,position,Company) values (?,?,?,?,?,?,?,?)");
+            pst.setString(1, stuID);
+                        pst.setString(2, Name);
+                        pst.setString(3, Email);
                          pst.setString(4, Mobile);
                          pst.setString(5, Gender);
                          pst.setString(6, dob);
@@ -113,7 +113,7 @@ public class StudentReg extends HttpServlet {
                                                 
                                                 int rowCount = pst.executeUpdate();
                                                 dispatcher=request.getRequestDispatcher("index.html");
-                                                JOptionPane.showMessageDialog(null,"Insert Succsuss!");
+                                                JOptionPane.showMessageDialog(null,"Insert Success!");
                                                 if(rowCount>0){
                                                     request.setAttribute("status", "sucuss");
                                                 }

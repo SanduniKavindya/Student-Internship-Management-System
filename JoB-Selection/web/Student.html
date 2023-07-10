@@ -71,19 +71,28 @@ padding: 5px 15px;
 		font-weight: bold;
 		}
 		body {
-  background-image: url('img/intern2.jpg');
+  background-image: url('intern10.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed; 
   background-size: 100% 100%;
-}	
+}
 
+#backButton {
+background-color: #ED0BB6;
+color: white;
+padding: 10px 20px;
+border: none;
+cursor: pointer;
+font-size: 16px;
+BACK TO DO}
 
 </style>
 </head>
 <body>
 
 <br>
- <a href="index.html"> Back </a>
+<button id="backButton">
+         <a href="index.html" style="text-decoration:none;"> Go Back</a></button>
 <form action="StudentReg" method="post">
 <table align="center" cellpadding = "10">
 <caption><h3>Student Internship Registration</h3> </caption>
@@ -92,21 +101,21 @@ padding: 5px 15px;
 <!--------------------- First Name ------------------------------------------>
 <tr>
 <td>ID</td>
-<td><input type="text" name="FirstName" maxlength="50" placeholder="GAM/IT/2020/F/0001" />
+<td><input type="text" name="stuID" maxlength="50" placeholder="GAM/IT/2020/F/0001" />
 
 </td>
 </tr>
 <!------------------------ Last Name --------------------------------------->
 <tr>
 <td>Name</td>
-<td><input type="text" name="LastName" maxlength="50" placeholder="Isuru"/>
+<td><input type="text" name="Name" maxlength="50" placeholder="Isuru"/>
 
 </td>
 </tr>
 <!-------------------------- Email ID ------------------------------------->
 <tr>
 <td>Email</td>
-<td><input type="email" name="EmailID" maxlength="100" placeholder="isuru@gmail.com"/></td>
+<td><input type="email" name="Email" maxlength="100" placeholder="isuru@gmail.com"/></td>
 </tr>
 <!-------------------------- Mobile Number ------------------------------------->
 <tr>

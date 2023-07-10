@@ -21,108 +21,55 @@
             }
             .div{
                 width: 50%;
-                float: right;
+                float:right
             }
+            h2{
+                margin-top: 2px;
+            }
+            
+            body {
+background: rgb(203,230,232);
+background: linear-gradient(90deg, rgba(203,230,232,1) 0%, rgba(227,240,239,1) 60%, rgba(105,203,226,0.9248949579831933) 100%);
+  background-size: 100% 100%;
+}
+input[type=submit] {
+ padding: 5px 15px;
+        background: #05F62A;
+        border: 0 none;
+        cursor: pointer;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+		font-weight: bold;
+}
+input[type=reset]{
+padding: 5px 15px;
+        background: #08F8F4;
+        border: 0 none;
+        cursor: pointer;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+		font-weight: bold;
+		}
+            
+            #backButton {
+background-color: #ED0BB6;
+color: white;
+padding: 10px 20px;
+border: none;
+cursor: pointer;
+font-size: 16px;
+BACK TO DO
+           
+           }
         </style>
     </head>
     <body>
-         <a href="index.html"> Back </a>
+        <button id="backButton">
+         <a href="index.html" style="text-decoration:none;"> Go Back</a></button>
     <center>
         <br>
-        <center><h2>HOD MAINTAINANCE</h2></center><br>
-        <div class="div1">
-        <table border="1"  >
-            <caption align="bottoom">Student Details</caption>
-            <tr>
-                <th> ID</th>
-                <th> StudentName</th>
-                <th> EmailID</th>
-                <th> Mobile</th>
-                <th>Gender</th>
-                <th>dob</th>
-                 <th>company</th>
-            </tr> 
-        
-        <%
-        try{
-           
-                   
-
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con=(Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/data?useSSL=false","root","");
-            Statement st=con.createStatement();
-            
-            String str="select * from Student";
-            ResultSet rs=st.executeQuery(str);
-            while(rs.next()){
-                %>
-                <tr>           
-    <td><%=rs.getString("FirstName")%> </td>
-    <td><%=rs.getString("LastName")%> </td>
-    <td><%=rs.getString("EmailID")%> </td>
-    <td><%=rs.getString("Mobile")%> </td>
-    <td><%=rs.getString("Gender")%> </td>
-    <td><%=rs.getString("dob")%> </td>
-     <td><%=rs.getString("position")%> </td>
-    <td><%=rs.getString("company")%> </td></tr>
-   
-    
-    <%
-            }
-            
-        }catch(Exception e){
-            
-}%>
-   </table>   
-        </div>
-   
-   <div class="div2">
-  
-        <table border="1" >
-            <caption align="bottoom">Company details</caption>
-            <tr>
-                <th> Company Name</th>
-                <th> Email</th>
-                <th> Mobile</th>
-                <th>Position</th>
-                <th>Quantity</th>
-                 
-            </tr> 
-        
-        <%
-        try{
-           
-                   
-
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con=(Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/data?useSSL=false","root","");
-            Statement st=con.createStatement();
-            
-            String str="select * from company";
-            ResultSet rs=st.executeQuery(str);
-            while(rs.next()){
-                %>
-                <tr>           
-    
-    <td><%=rs.getString("company")%> </td>
-    <td><%=rs.getString("EmailID")%> </td>
-    <td><%=rs.getString("Mobile")%> </td>
-    <td><%=rs.getString("position")%> </td>
-    <td><%=rs.getString("quantity")%> </td>
-    
-    
-    <%
-            }
-            
-        }catch(Exception e){
-            
-}%>
-   </table>   
-   </div>  
-   <br>
-   <br>
-   <center>
-   <div>
+        <center><h2>HOD MAINTENANCE</h2></center><br>
+        <div>
    <h3>Match Student</h3>
    <form action="JOB" method="post">
 <table align="center" cellpadding = "10">
@@ -171,8 +118,6 @@
 <td><input type="mobile" id="quantity" name="mobile" min="1" max="100">
 </td>
 </tr>
-
-<!----------------------- Submit and Reset ------------------------------->
 <tr>
 <td colspan="2" align="center">
 <input type="submit" value="Save">
@@ -184,7 +129,106 @@
 </form>
    <a href="StudentSelect.jsp"> View Selected </a>
 
-    </center>   
+     
     </div>
+
+        <br> <br> <br>
+        
+        <div class="div1">
+        <table border="1"  >
+            <caption align="bottoom"><b>Student Details</b></caption>
+            <tr>
+                <th> ID</th>
+                <th> StudentName</th>
+                <th> Email</th>
+                <th> Mobile</th>
+                <th>Gender</th>
+                <th>dob</th>
+                 <th>position</th>
+                 <th>company</th>
+            </tr> 
+        
+        <%
+        try{
+           
+                   
+
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con=(Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/data?useSSL=false","root","");
+            Statement st=con.createStatement();
+            
+            String str="select * from Student";
+            ResultSet rs=st.executeQuery(str);
+            while(rs.next()){
+                %>
+                <tr>           
+    <td><%=rs.getString("stuID")%> </td>
+    <td><%=rs.getString("Name")%> </td>
+    <td><%=rs.getString("Email")%> </td>
+    <td><%=rs.getString("Mobile")%> </td>
+    <td><%=rs.getString("Gender")%> </td>
+    <td><%=rs.getString("dob")%> </td>
+     <td><%=rs.getString("position")%> </td>
+    <td><%=rs.getString("company")%> </td></tr>
+   
+    
+    <%
+            }
+            
+        }catch(Exception e){
+            
+}%>
+   </table>   
+        </div>
+   
+   <div class="div2">
+  
+        <table border="1" >
+            <caption align="bottoom"><b>Company details<b></caption>
+            <tr>
+                <th> Company Name</th>
+                <th> Email</th>
+                <th> Mobile</th>
+                <th>Position</th>
+                <th>Quantity</th>
+                 
+            </tr> 
+        
+        <%
+        try{
+           
+                   
+
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con=(Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/data?useSSL=false","root","");
+            Statement st=con.createStatement();
+            
+            String str="select * from company";
+            ResultSet rs=st.executeQuery(str);
+            while(rs.next()){
+                %>
+                <tr>           
+    
+    <td><%=rs.getString("company")%> </td>
+    <td><%=rs.getString("EmailID")%> </td>
+    <td><%=rs.getString("Mobile")%> </td>
+    <td><%=rs.getString("position")%> </td>
+    <td><%=rs.getString("quantity")%> </td>
+    
+    
+    <%
+            }
+            
+        }catch(Exception e){
+            
+}%>
+   </table>   
+   </div>  
+   <br>
+   <br>
+   
+   
+<!----------------------- Submit and Reset ------------------------------->
+
     </body>
 </html>
